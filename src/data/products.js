@@ -21,7 +21,7 @@ export const products = [
       'El magnesio y las vitaminas B6 y B12 contribuyen a disminuir el cansancio y la fatiga.',
     storage: 'Ambiente',
     usage: null,
-    price: 'Por definir',
+    price: '1,29 €',
     icon: 'sunrise',
     color: '#F2A33A',
     liquid: '#F6C77A',
@@ -38,15 +38,15 @@ export const products = [
       'La proteína contribuye a conservar la masa muscular. La vitamina D contribuye al funcionamiento normal de los músculos.',
     storage: 'Refrigerado',
     usage: null,
-    price: 'Por definir',
+    price: '1,79 €',
     icon: 'sun',
     color: '#E4572E',
     liquid: '#F4EDE2',
   },
   {
     id: 'firme',
-    name: 'Tempo Firme',
-    range: 'Firme',
+    name: 'Tempo Ritmo',
+    range: 'Ritmo',
     moment: 'Día',
     benefit: 'Huesos',
     ingredients: 'Base láctea con calcio + vitamina D',
@@ -55,15 +55,15 @@ export const products = [
       'El calcio y la vitamina D son necesarios para el mantenimiento de los huesos en condiciones normales.',
     storage: 'Refrigerado',
     usage: null,
-    price: 'Por definir',
+    price: '1,49 €',
     icon: 'sunBone',
     color: '#3A7CA5',
     liquid: '#F7F3EC',
   },
   {
     id: 'activo',
-    name: 'Tempo Activo',
-    range: 'Activo',
+    name: 'Tempo Fuerza + Ritmo',
+    range: 'Fuerza + Ritmo',
     moment: 'Mediodía y tarde',
     benefit: 'Músculo y huesos',
     ingredients: 'Proteína láctea + calcio + vitamina D. Creatina (3 g) en polvo en el tapón',
@@ -74,7 +74,7 @@ export const products = [
     claimStatus: 'Claim de creatina pendiente de validar',
     storage: 'Refrigerado',
     usage: 'Pulsa el tapón, agita y tómalo.',
-    price: 'Por definir',
+    price: '2,29 €',
     icon: 'sunBonePlus',
     color: '#2A9D8F',
     liquid: '#EFE3CF',
@@ -93,7 +93,7 @@ export const products = [
       'La melatonina contribuye a disminuir el tiempo necesario para conciliar el sueño (1 mg antes de acostarse).',
     storage: 'Ambiente',
     usage: 'Para las noches que lo necesites.',
-    price: 'Por definir',
+    price: '1,29 €',
     icon: 'moon',
     color: '#3D348B',
     liquid: '#8C83C9',
@@ -102,22 +102,24 @@ export const products = [
 
 export const productById = Object.fromEntries(products.map((p) => [p.id, p]));
 
-// Packs de 4 shots (Tempo Activo va aparte: es el mix). Precios por definir.
+// Packs de 4 shots (Tempo Fuerza + Ritmo va aparte: es el mix).
+// Ids internos: 'firme' = Tempo Ritmo, 'activo' = Tempo Fuerza + Ritmo.
+// Precios (PVP con IVA) de docs/Tempo_by_Puleva_Pricing.xlsx; Pack ×4 = 4 sueltos con el descuento de Cronos.
 export const coreRange = ['impulso', 'fuerza', 'firme', 'pausa'];
 
 export const packs = [
   {
-    id: 'ritmo',
-    label: 'Pack Ritmo',
+    id: 'cronos',
+    label: 'Pack Cronos',
     subtitle: 'Mañana · Día · Noche',
     items: coreRange, // uno de cada
-    price: 'Por definir',
+    price: '5,29 €',
   },
   {
     id: 'single',
     label: 'Pack ×4',
     units: 4, // cuatro shots de una misma gama (de coreRange)
-    price: 'Por definir',
+    prices: { impulso: '4,69 €', fuerza: '6,49 €', firme: '5,39 €', pausa: '4,69 €' },
   },
 ];
 

@@ -7,15 +7,16 @@ import { createControls } from '../three/interaction.js';
 import { openSheet } from '../ui/sheet.js';
 import { gsap, reduced } from './fx.js';
 
-// Pack Tempo de 4: "Pack Ritmo" (uno de cada) o "Pack ×4" de una sola gama.
+// Pack Tempo de 4: "Pack Cronos" (uno de cada) o "Pack ×4" de una sola gama.
 export function initPack() {
   const section = document.getElementById('pack');
   const rangesEl = section.querySelector('.pack__ranges');
   const contentsEl = section.querySelector('.pack__contents');
   const note = section.querySelector('.pack__note');
-  const ritmo = packs.find((p) => p.id === 'ritmo');
+  const cronos = packs.find((p) => p.id === 'cronos');
   const single = packs.find((p) => p.id === 'single');
-  let mode = 'ritmo';
+  let mode = 'cronos';
+  const priceEl = section.querySelector('.pack__price strong');
   let range = coreRange[0];
 
   rangesEl.innerHTML = coreRange
@@ -97,7 +98,7 @@ export function initPack() {
   }
 
   function render() {
-    const ids = mode === 'ritmo' ? ritmo.items : Array(single.units).fill(range);
+    const ids = mode === 'cronos' ? cronos.items : Array(single.units).fill(range);
     rangesEl.hidden = mode !== 'single';
     for (const b of rangesEl.children) b.setAttribute('aria-pressed', String(b.dataset.id === range));
 
@@ -113,12 +114,13 @@ export function initPack() {
     if (box) {
       const p = productById[range];
       box.print(
-        mode === 'ritmo'
-          ? { title: ritmo.label, subtitle: ritmo.subtitle, colors: ritmo.items.map((id) => productById[id].color) }
+        mode === 'cronos'
+          ? { title: cronos.label, subtitle: cronos.subtitle, colors: cronos.items.map((id) => productById[id].color) }
           : { title: `Pack ${p.range}`, subtitle: `${p.moment} · ${p.benefit}`, colors: [p.color] },
       );
       fill(ids);
     }
+    priceEl.textContent = mode === 'cronos' ? cronos.price : single.prices[range];
     note.textContent = '';
   }
 

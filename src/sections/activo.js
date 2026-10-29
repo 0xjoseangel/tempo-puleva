@@ -6,7 +6,7 @@ import { enablePicking } from '../three/interaction.js';
 import { openSheet } from '../ui/sheet.js';
 import { gsap, ScrollTrigger, reduced, float } from './fx.js';
 
-// Tempo Activo, "el mix": al hacer scroll se pulsa el tapón, cae la creatina y se agita.
+// Tempo Fuerza + Ritmo, "el mix": al hacer scroll se pulsa el tapón, cae la creatina y se agita.
 export function initActivo() {
   const pin = document.querySelector('.activo__pin');
   const steps = [...pin.querySelectorAll('.activo__steps li')];
@@ -23,7 +23,7 @@ export function initActivo() {
 
   const stage = createStage(container, {
     background: null,
-    label: 'Tempo Activo: al pulsar el tapón la creatina en polvo cae al líquido',
+    label: 'Tempo Fuerza + Ritmo: al pulsar el tapón la creatina en polvo cae al líquido',
   });
   stage.floor.material.opacity = 0.18;
   const shot = createShot(productById.activo, stage.renderer);

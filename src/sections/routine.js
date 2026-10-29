@@ -11,7 +11,7 @@ export function initRoutine() {
   table.innerHTML = head + routineNutrients
     .map((n, i) => {
       const src = n.source.split(' ')[0];
-      const shots = n.source.split(' + ').map((id) => productById[id]?.range).filter(Boolean).join(' + ');
+      const shots = n.source.split(' + ').map((id) => productById[id]?.range).filter(Boolean).join(', ');
       return `<div class="routine__row" role="row" data-i="${i}" style="--rc: var(--c-${src})">
         <span class="routine__nutrient" role="rowheader">${n.nutrient}<small>Tempo ${shots}</small></span>
         <span class="routine__gauge" role="cell"><span class="routine__bar"><span></span></span><small></small></span>

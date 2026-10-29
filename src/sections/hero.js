@@ -20,7 +20,7 @@ export function initHero() {
   if (!container) return;
   const stage = createStage(container, {
     background: null,
-    label: 'Los cuatro shots de Tempo: Impulso, Fuerza, Firme y Pausa',
+    label: 'Los cuatro shots de Tempo: Impulso, Fuerza, Ritmo y Pausa',
   });
   stage.floor.material.opacity = 0.1;
 

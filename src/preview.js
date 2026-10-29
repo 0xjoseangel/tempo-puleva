@@ -46,7 +46,7 @@ for (const p of products) {
   picker.appendChild(b);
 }
 
-// Tapón dosificador (Tempo Activo)
+// Tapón dosificador (Tempo Fuerza + Ritmo)
 const activateBtn = document.getElementById('activate');
 
 function updateActivateButton() {

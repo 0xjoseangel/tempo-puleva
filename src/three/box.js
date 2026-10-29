@@ -72,7 +72,7 @@ export function createPackBox({ slots = 4, slotW = 4.6, depth = 5.2, backH = 10.
     group,
     slotX,
     width: W,
-    /** Redibuja la impresión: title (p. ej. "Pack Ritmo del día"), colors de los shots */
+    /** Redibuja la impresión: title (p. ej. "Pack Cronos"), colors de los shots */
     print({ title, subtitle, colors }) {
       drawBack(backCanvas, colors);
       drawFront(frontCanvas, title, subtitle, colors);
