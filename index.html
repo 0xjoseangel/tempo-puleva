@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tempo by Puleva · A tu ritmo.</title>
+  <meta name="description" content="Tempo by Puleva: shots para cuidar lo que te importa, de la mañana a la noche. Propuesta académica, Hackathon UGR × Lactalis Puleva 2026." />
+  <meta name="theme-color" content="#F7F2EA" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Outfit:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#inicio" aria-label="Tempo by Puleva, inicio">
+      <span class="nav__tempo">Tempo</span>
+      <span class="wordmark">by Puleva</span>
+    </a>
+    <nav aria-label="Secciones">
+      <ul class="nav__links">
+        <li><a href="#ritmo">El ritmo</a></li>
+        <li><a href="#pack">El pack</a></li>
+        <li><a href="#activo">Activo</a></li>
+        <li><a href="#gama">La gama</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--solid nav__cta" href="#pack">Elige tu pack</a>
+  </header>
+
+  <main id="contenido">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero__stage" id="hero-stage"></div>
+      <div class="hero__copy">
+        <p class="eyebrow hero__eyebrow">Nuevo · Shots de 100 ml para mayores de 50</p>
+        <h1 class="hero__title" id="hero-title" data-split>A tu ritmo.</h1>
+        <p class="hero__lead">Cuatro shots para cuidar lo que te importa, de la mañana a la noche. No hace falta saber de ingredientes: <strong>solo elige el momento.</strong></p>
+        <div class="hero__ctas">
+          <a class="btn btn--solid btn--lg" href="#pack">Descubre el pack de 4</a>
+          <a class="btn btn--ghost btn--lg" href="#ritmo">Cómo funciona</a>
+        </div>
+      </div>
+      <ul class="hero__chips" aria-label="La gama">
+        <li style="--c: var(--c-impulso)">Mañana · Energía</li>
+        <li style="--c: var(--c-fuerza)">Día · Músculo</li>
+        <li style="--c: var(--c-firme)">Día · Huesos</li>
+        <li style="--c: var(--c-pausa)">Noche · Descanso</li>
+      </ul>
+      <a class="hero__scroll" href="#por-que" aria-label="Bajar a la siguiente sección"><span></span></a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Energía</span><i></i><span>Músculo</span><i></i><span>Huesos</span><i></i><span>Descanso</span><i></i><span>A tu ritmo</span><i></i>
+        <span>Energía</span><i></i><span>Músculo</span><i></i><span>Huesos</span><i></i><span>Descanso</span><i></i><span>A tu ritmo</span><i></i>
+      </div>
+    </div>
+
+    <!-- ============ POR QUÉ ============ -->
+    <section class="why" id="por-que" aria-labelledby="why-title">
+      <h2 class="section-title" id="why-title" data-reveal>Cuidarte no debería ser <em>complicado.</em></h2>
+      <ol class="why__grid">
+        <li class="why__card" data-reveal>
+          <span class="why__num">01</span>
+          <h3>Elige el momento, no el ingrediente</h3>
+          <p>Mañana, día o noche. Cada shot tiene su momento y su color. Así de fácil.</p>
+        </li>
+        <li class="why__card" data-reveal>
+          <span class="why__num">02</span>
+          <h3>Un trago y listo</h3>
+          <p>Formato shot de 100 ml. Cabe en la nevera, en el bolso y en tu rutina.</p>
+        </li>
+        <li class="why__card" data-reveal>
+          <span class="why__num">03</span>
+          <h3>La confianza de siempre</h3>
+          <p>Una idea nueva con el respaldo de una marca que lleva décadas en tu mesa.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ EL RITMO DEL DÍA ============ -->
+    <section class="rhythm" id="ritmo" aria-labelledby="rhythm-title">
+      <div class="rhythm__pin">
+        <div class="rhythm__sky" aria-hidden="true">
+          <div class="rhythm__orb"></div>
+        </div>
+        <div class="rhythm__stage" id="rhythm-stage"></div>
+        <div class="rhythm__copy">
+          <h2 class="eyebrow rhythm__kicker" id="rhythm-title">El ritmo del día</h2>
+          <div class="rhythm__steps" aria-live="polite"></div>
+          <ol class="rhythm__dots" aria-hidden="true"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PACK ============ -->
+    <section class="pack" id="pack" aria-labelledby="pack-title">
+      <div class="pack__intro">
+        <p class="eyebrow" data-reveal>El pack Tempo</p>
+        <h2 class="section-title" id="pack-title" data-reveal>Cuatro shots. <em>Un día entero.</em></h2>
+        <p class="lead" data-reveal>Un shot para cada momento en una sola caja. O cuatro de tu favorito, si ya lo tienes claro.</p>
+      </div>
+      <div class="pack__layout">
+        <div class="pack__stage" id="pack-stage"></div>
+        <div class="pack__panel">
+          <fieldset class="pack__modes">
+            <legend class="visually-hidden">Tipo de pack</legend>
+            <label class="pack__mode">
+              <input type="radio" name="pack-mode" value="ritmo" checked />
+              <span><strong>Pack Ritmo</strong> Uno de cada: Impulso, Fuerza, Firme y Pausa</span>
+            </label>
+            <label class="pack__mode">
+              <input type="radio" name="pack-mode" value="single" />
+              <span><strong>Pack ×4 de una gama</strong> Cuatro shots de tu favorito</span>
+            </label>
+          </fieldset>
+          <div class="pack__ranges" role="group" aria-label="Elige la gama" hidden></div>
+          <ul class="pack__contents" aria-label="Contenido del pack"></ul>
+          <p class="pack__aside">¿Buscas Tempo Activo? Va aparte: <a href="#activo">es el mix</a>.</p>
+          <p class="pack__price">Precio <strong>Por definir</strong></p>
+          <button class="btn btn--solid btn--lg pack__buy" type="button">Lo quiero</button>
+          <p class="pack__note" role="status"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACTIVO ============ -->
+    <section class="activo" id="activo" aria-labelledby="activo-title">
+      <div class="activo__pin">
+        <div class="activo__stage" id="activo-stage"></div>
+        <div class="activo__copy">
+          <p class="eyebrow activo__kicker">Nuevo · El mix</p>
+          <h2 class="activo__title" id="activo-title">Tempo <span>Activo</span></h2>
+          <p class="activo__lead">Músculo y huesos en un solo shot, para el mediodía y la tarde. Con <strong>creatina en polvo</strong> guardada en el tapón hasta el momento de tomarla.</p>
+          <ol class="activo__steps">
+            <li><span>1</span><div><strong>Pulsa</strong> el tapón. Se rompe el sello.</div></li>
+            <li><span>2</span><div><strong>La creatina cae</strong> al líquido.</div></li>
+            <li><span>3</span><div><strong>Agita</strong> y tómalo. Listo.</div></li>
+          </ol>
+          <button class="btn btn--light" type="button" id="activo-replay">Pulsar el tapón</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GAMA ============ -->
+    <section class="range" id="gama" aria-labelledby="range-title">
+      <p class="eyebrow" data-reveal>La gama completa</p>
+      <h2 class="section-title" id="range-title" data-reveal>Cinco shots. <em>Tu ritmo.</em></h2>
+      <p class="lead" data-reveal>Gira la estantería y toca un shot para ver su ficha.</p>
+      <div class="range__stage" id="range-stage"></div>
+      <ul class="range__list" aria-label="Fichas de producto"></ul>
+    </section>
+
+    <!-- ============ RUTINA ============ -->
+    <section class="routine" id="rutina" aria-labelledby="routine-title">
+      <p class="eyebrow" data-reveal>Pensado como sistema</p>
+      <h2 class="section-title" id="routine-title" data-reveal>Una rutina, <em>sin pasarse.</em></h2>
+      <p class="lead" data-reveal>Lo que aporta la rutina completa frente al nivel máximo de ingesta tolerable fijado por la EFSA.</p>
+      <div class="routine__table" role="table" aria-label="Dosis de la rutina frente al límite EFSA"></div>
+      <p class="routine__note"><span class="tag">Pendiente de validar</span> Valores orientativos y editables. Requieren revisión nutricional y regulatoria.</p>
+    </section>
+
+    <!-- ============ CTA FINAL ============ -->
+    <section class="final" aria-labelledby="final-title">
+      <h2 class="final__title" id="final-title" data-split>A tu ritmo.</h2>
+      <p class="final__by">Tempo <span class="wordmark">by Puleva</span></p>
+      <a class="btn btn--solid btn--lg" href="#pack">Elige tu pack</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Propuesta académica – Hackathon UGR × Lactalis Puleva 2026. Concepto no comercial; claims pendientes de verificación regulatoria.</p>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

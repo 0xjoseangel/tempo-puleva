@@ -1,0 +1,70 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--c-cream);
+  color: var(--c-night);
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  line-height: 1.55;
+}
+
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.05; margin: 0; letter-spacing: -0.02em; }
+
+:focus-visible { outline: var(--focus); outline-offset: 4px; border-radius: 6px; }
+
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin: 0;
+  color: var(--c-night-soft);
+}
+
+.btn {
+  font: 600 var(--fs-small) / 1 var(--font-display);
+  color: var(--c-night);
+  background: var(--c-white);
+  border: 2px solid var(--c-night);
+  border-radius: 999px;
+  padding: 0.85em 1.4em;
+  min-height: 48px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.btn:hover, .btn[aria-pressed='true'] { background: var(--c-night); color: var(--c-white); }
+
+/* ---------- Ficha ---------- */
+.sheet {
+  border: 0;
+  padding: 0;
+  border-radius: calc(var(--radius) * 1.4);
+  max-width: min(36rem, calc(100vw - 2rem));
+  width: 100%;
+  color: var(--c-night);
+  background: var(--c-white);
+  box-shadow: var(--shadow);
+}
+.sheet::backdrop { background: rgb(27 42 65 / 0.45); backdrop-filter: blur(4px); }
+.sheet__card { padding: clamp(1.5rem, 4vw, 2.5rem); border-top: 0.6rem solid var(--range); }
+.sheet__moment { margin: 0 0 0.4rem; font-weight: 700; color: var(--range-ink); text-transform: uppercase; letter-spacing: 0.08em; font-size: var(--fs-small); }
+.sheet__title { font-size: var(--fs-h3); }
+.sheet__claim { margin: 1.25rem 0; padding: 1rem 1.25rem; background: var(--c-cream); border-left: 4px solid var(--range); border-radius: 0.5rem; }
+.sheet__list { margin: 0; display: grid; gap: 0.6rem; }
+.sheet__row { display: grid; grid-template-columns: 11rem 1fr; gap: 1rem; }
+.sheet__row dt { font-weight: 700; }
+.sheet__row dd { margin: 0; }
+.sheet__close { margin-top: 1.5rem; }
+@media (max-width: 520px) { .sheet__row { grid-template-columns: 1fr; gap: 0; } }
+
+/* Wordmark con logo oficial (cuando existe public/brand/puleva-logo.*) */
+.wordmark[data-logo] { display: inline-flex; align-items: center; gap: 0.3em; vertical-align: middle; }
+.wordmark__logo { height: 1.4em; width: auto; display: block; }
