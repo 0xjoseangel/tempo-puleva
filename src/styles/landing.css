@@ -288,6 +288,8 @@ a { color: inherit; }
 .final__by .wordmark { font-size: 1em; }
 .footer { background: var(--c-night); color: #D9E0EA; padding: 2rem var(--gutter); text-align: center; font-size: var(--fs-small); }
 .footer p { margin: 0 auto; max-width: 60ch; }
+.footer__team { color: #FFFFFF; margin-bottom: 0.75rem !important; max-width: 70ch !important; }
+.footer__team span { white-space: nowrap; }
 
 /* Elementos que aparecen al hacer scroll (estado inicial lo pone JS) */
 .no-webgl .hero__stage, .no-webgl .rhythm__stage, .no-webgl .pack__stage, .no-webgl .activo__stage, .no-webgl .range__stage { display: none; }

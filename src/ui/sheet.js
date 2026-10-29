@@ -35,7 +35,6 @@ export function openSheet(p) {
         ${row('Ingredientes', p.ingredients)}
         ${row('Tamaño', p.size)}
         ${row('Momento de consumo', p.moment)}
-        ${row('Conservación', p.storage)}
         ${row('Uso', p.usage)}
         ${row('Precio', p.price)}
         ${row('Aviso', p.claimStatus)}

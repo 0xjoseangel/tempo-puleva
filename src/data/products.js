@@ -19,7 +19,6 @@ export const products = [
     size: '100 ml',
     claim:
       'El magnesio y las vitaminas B6 y B12 contribuyen a disminuir el cansancio y la fatiga.',
-    storage: 'Ambiente',
     usage: null,
     price: '1,29 €',
     icon: 'sunrise',
@@ -36,7 +35,6 @@ export const products = [
     size: '100 ml',
     claim:
       'La proteína contribuye a conservar la masa muscular. La vitamina D contribuye al funcionamiento normal de los músculos.',
-    storage: 'Refrigerado',
     usage: null,
     price: '1,79 €',
     icon: 'sun',
@@ -53,7 +51,6 @@ export const products = [
     size: '100 ml',
     claim:
       'El calcio y la vitamina D son necesarios para el mantenimiento de los huesos en condiciones normales.',
-    storage: 'Refrigerado',
     usage: null,
     price: '1,49 €',
     icon: 'sunBone',
@@ -72,7 +69,6 @@ export const products = [
       'La proteína contribuye a conservar la masa muscular. El calcio y la vitamina D son necesarios para el mantenimiento de los huesos en condiciones normales. La ingesta diaria de creatina puede potenciar el efecto del entrenamiento de resistencia sobre la fuerza muscular en adultos mayores de 55 años.',
     // Claim de creatina: Reg. (UE) 2017/672 (3 g/día + entrenamiento de resistencia). PENDIENTE DE VALIDAR.
     claimStatus: 'Claim de creatina pendiente de validar',
-    storage: 'Refrigerado',
     usage: 'Pulsa el tapón, agita y tómalo.',
     price: '2,29 €',
     icon: 'sunBonePlus',
@@ -91,7 +87,6 @@ export const products = [
     size: '100 ml',
     claim:
       'La melatonina contribuye a disminuir el tiempo necesario para conciliar el sueño (1 mg antes de acostarse).',
-    storage: 'Ambiente',
     usage: 'Para las noches que lo necesites.',
     price: '1,29 €',
     icon: 'moon',

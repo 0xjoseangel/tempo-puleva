@@ -132,10 +132,7 @@ function drawLabel(ctx, W, H, p) {
     ctx.fillText(p.size, rx, H * 0.24, sideW);
     ctx.fillStyle = NIGHT;
     ctx.font = `400 ${Math.round(H * 0.038)}px ${TEXT}`;
-    const lines = [
-      `Momento: ${p.moment.toLowerCase()}`,
-      p.storage === 'Refrigerado' ? 'Conservar refrigerado' : 'Conservar a temperatura ambiente',
-    ];
+    const lines = [`Momento: ${p.moment.toLowerCase()}`];
     if (p.usage) lines.push(p.usage);
     let y = H * 0.33;
     for (const l of lines) y = wrapText(ctx, l, rx, y, sideW, H * 0.05, 2) + H * 0.02;
