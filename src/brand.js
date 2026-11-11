@@ -32,3 +32,6 @@ export function applyLogo(el) {
   el.dataset.logo = '1';
   el.innerHTML = `<span class="wordmark__by">by</span><img class="wordmark__logo" src="${logo.src}" alt="Puleva" />`;
 }
+
+/** Permite fijar el logo ya cargado desde fuera de Vite (lo usa el anuncio en video/). */
+export const setBrandLogo = (img) => (logo = img);

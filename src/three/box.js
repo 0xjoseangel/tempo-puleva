@@ -10,9 +10,12 @@ const TEXT = "'Atkinson Hyperlegible', system-ui, sans-serif";
  * laterales y separadores. Origen en el centro de la base.
  * slots: posiciones X de cada hueco.
  */
-export function createPackBox({ slots = 4, slotW = 4.6, depth = 5.2, backH = 10.5, frontH = 3.6 } = {}) {
+// Medidas de la caja (cm); también las usa el generador de impresión 3D (print/)
+export const BOX = { slots: 4, slotW: 4.6, depth: 5.2, backH: 10.5, frontH: 3.6, T: 0.18 };
+
+export function createPackBox(opts = {}) {
+  const { slots, slotW, depth, backH, frontH, T } = { ...BOX, ...opts };
   const group = new THREE.Group();
-  const T = 0.18;
   const W = slots * slotW + T * 2;
   const card = new THREE.MeshStandardMaterial({ color: 0xf3ebdd, roughness: 0.85 });
   const inside = new THREE.MeshStandardMaterial({ color: 0xe6dccb, roughness: 0.95 });
@@ -95,7 +98,7 @@ function toTexture(c) {
   return t;
 }
 
-function drawBack(c, colors) {
+export function drawBack(c, colors) {
   const ctx = c.getContext('2d');
   const { width: W, height: H } = c;
   ctx.fillStyle = '#FFFCF7';
@@ -119,10 +122,10 @@ function drawBack(c, colors) {
   ctx.textAlign = 'center';
   ctx.font = `700 ${Math.round(W * 0.15)}px ${DISPLAY}`;
   ctx.letterSpacing = `${-W * 0.003}px`;
-  ctx.fillText('Tempo', W / 2, H * 0.2);
+  ctx.fillText('Tempo', W / 2, H * 0.22);
   ctx.letterSpacing = '0px';
   ctx.font = `500 ${Math.round(W * 0.05)}px ${DISPLAY}`;
-  ctx.fillText('A tu ritmo.', W / 2, H * 0.29);
+  ctx.fillText('A tu ritmo.', W / 2, H * 0.305);
 
   const logo = getBrandLogo();
   if (logo) {
@@ -138,7 +141,7 @@ function drawBack(c, colors) {
   }
 }
 
-function drawFront(c, title, subtitle, colors) {
+export function drawFront(c, title, subtitle, colors) {
   const ctx = c.getContext('2d');
   const { width: W, height: H } = c;
   ctx.fillStyle = NIGHT;

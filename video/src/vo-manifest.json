@@ -1,0 +1,47 @@
+{
+  "scenes": {
+    "hook": {
+      "file": "vo/hook.mp3",
+      "text": "Cuidarte no debería ser complicado.",
+      "voice": "1CeqBeXMOqCleeQjfYfO",
+      "seconds": 2.089796
+    },
+    "manana": {
+      "file": "vo/manana.mp3",
+      "text": "Con Tempo, solo eliges el momento. Por la mañana, Impulso, para tu energía.",
+      "voice": "1CeqBeXMOqCleeQjfYfO",
+      "seconds": 5.34059
+    },
+    "dia": {
+      "file": "vo/dia.mp3",
+      "text": "Durante el día, Fuerza y Ritmo, para tus músculos y tus huesos.",
+      "voice": "1CeqBeXMOqCleeQjfYfO",
+      "seconds": 3.993832
+    },
+    "mix": {
+      "file": "vo/mix.mp3",
+      "text": "¿Las dos a la vez? Fuerza más Ritmo. Pulsa el tapón, agita, y listo.",
+      "voice": "1CeqBeXMOqCleeQjfYfO",
+      "seconds": 5.712109
+    },
+    "noche": {
+      "file": "vo/noche.mp3",
+      "text": "Y por la noche, Pausa, para descansar.",
+      "voice": "1CeqBeXMOqCleeQjfYfO",
+      "seconds": 3.343673
+    },
+    "promo": {
+      "file": "vo/promo.mp3",
+      "text": "Y ahora, el Pack Cronos: cuatro shots, un día entero, por solo cinco con veintinueve euros.",
+      "voice": "1CeqBeXMOqCleeQjfYfO",
+      "seconds": 6.130068
+    },
+    "cierre": {
+      "file": "vo/cierre.mp3",
+      "text": "Tempo, bai Puleva. A tu ritmo.",
+      "voice": "1CeqBeXMOqCleeQjfYfO",
+      "seconds": 2.554195
+    }
+  },
+  "music": "music.mp3"
+}

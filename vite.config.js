@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: resolve(import.meta.dirname, 'index.html'),
         preview: resolve(import.meta.dirname, 'preview.html'),
+        pitch: resolve(import.meta.dirname, 'pitch.html'),
       },
     },
   },

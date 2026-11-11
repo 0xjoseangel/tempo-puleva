@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tempo by Puleva · Pitch</title>
+  <meta name="description" content="Presentación final de Tempo by Puleva. Hackathon UGR × Lactalis Puleva 2026." />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <!-- Cielo: cambia de amanecer a noche según la hora de cada diapositiva -->
+  <div class="sky" aria-hidden="true">
+    <div class="sky__stars"></div>
+    <div class="sky__sun"></div>
+    <div class="sky__moon"></div>
+  </div>
+
+  <div class="deck" id="deck">
+    <div class="deck__stage" id="stage3d"></div>
+
+    <!-- ============ 0 · ARRANQUE ============ -->
+    <section class="slide slide--hook" data-time="06:30" data-scene="hidden">
+      <div class="pills" aria-hidden="true">
+        <span style="--x: 6%; --y: 4%; --r: -8deg; --c: var(--c-impulso)">Magnesio</span>
+        <span style="--x: 60%; --y: 2%; --r: 6deg; --c: var(--c-firme)">Vitamina D3</span>
+        <span style="--x: 26%; --y: 16%; --r: 3deg; --c: var(--c-impulso)">Vitamina B12</span>
+        <span style="--x: 76%; --y: 18%; --r: -5deg; --c: var(--c-pausa)">Melatonina</span>
+        <span style="--x: 3%; --y: 74%; --r: 7deg; --c: var(--c-activo)">Creatina</span>
+        <span style="--x: 50%; --y: 88%; --r: -3deg; --c: var(--c-firme)">Calcio</span>
+        <span style="--x: 22%; --y: 90%; --r: -9deg; --c: var(--c-fuerza)">Proteína</span>
+        <span style="--x: 70%; --y: 76%; --r: 4deg; --c: var(--c-impulso)">Vitamina B6</span>
+        <span style="--x: 44%; --y: 6%; --r: 10deg; --c: var(--c-fuerza)">Omega 3</span>
+        <span style="--x: 84%; --y: 94%; --r: -7deg; --c: var(--c-activo)">Colágeno</span>
+      </div>
+      <h1 class="hook__title step" data-action="calm">Cuidarte no debería ser <em>complicado.</em></h1>
+      <aside class="notes">
+        Sin hablar al principio: dejad la bolsa de botes de pastillas en la mesa. «Esto es lo que necesita hoy alguien de 60 años para cuidarse.» Pausa.
+        Siguiente clic: aparece la frase. Retiráis la bolsa y destapáis la caja del Pack Cronos.
+      </aside>
+    </section>
+
+    <!-- ============ 1 · PORTADA ============ -->
+    <section class="slide slide--cover" data-time="07:00" data-scene="lineup">
+      <p class="kicker in">Hackathon UGR × Lactalis Puleva 2026</p>
+      <h1 class="cover__title in"><span class="cover__tempo">Tempo</span> <span class="byline">by <img src="./brand/puleva-logo.svg" alt="Puleva" /></span></h1>
+      <p class="cover__lead in">Cinco shots de 100 ml para cuidarte <strong>por momentos del día.</strong></p>
+      <ul class="team in">
+        <li>José Ángel Carretero Montes</li>
+        <li>Fernando José Gracia Choin</li>
+        <li>Alicia Ruiz Gómez</li>
+        <li>Rubén Granero Rubio</li>
+      </ul>
+      <aside class="notes">«Y esto es Tempo.» Presentaos rápido: cada uno es un momento del día y tiene su bote en la mano.</aside>
+    </section>
+
+    <!-- ============ 2 · INSIGHT ============ -->
+    <section class="slide slide--insight" data-time="08:00" data-scene="hidden" data-section="impulso">
+      <img class="insight__photo in" src="./pitch/img/manana.jpg" alt="" />
+      <div class="insight__copy">
+        <p class="kicker in">El insight</p>
+        <blockquote class="quote in">«Quiero cuidarme, pero no quiero convertirme en <mark>experto en ingredientes</mark> ni llenar la cocina de botes de pastillas.»</blockquote>
+        <p class="lead step">La barrera no es el interés. <strong>Es la complejidad.</strong></p>
+      </div>
+      <aside class="notes">Persona 1 (Impulso · mañana). El consumidor +50 quiere cuidarse; lo que le frena es tener que entender magnesio, B12, D3, melatonina, creatina…</aside>
+    </section>
+
+    <!-- ============ 3 · EL HUECO ============ -->
+    <section class="slide slide--gap" data-time="09:30" data-scene="hidden" data-section="impulso">
+      <p class="kicker in">La oportunidad</p>
+      <h2 class="title in">Entre dos lineales hay un hueco.</h2>
+      <div class="gap">
+        <article class="shelf in">
+          <h3>Suplementos</h3>
+          <p class="shelf__price"><span data-count="0.07" data-dec="2">0,07</span>–<span data-count="0.47" data-dec="2">0,47</span> €<small>/dosis</small></p>
+          <ul><li>Comprimidos y cápsulas</li><li>Ordenados por ingrediente</li><li>Imagen técnica, de farmacia</li></ul>
+        </article>
+        <article class="gap__hole step">
+          <span class="gap__q">?</span>
+          <p>Una <strong>rutina diaria completa</strong>, bebible y sencilla, de una <strong>marca de confianza</strong>.</p>
+          <p class="gap__nobody">Nadie la ofrece.</p>
+        </article>
+        <article class="shelf in">
+          <h3>Lácteos y shots funcionales</h3>
+          <p class="shelf__price"><span data-count="0.5" data-dec="2">0,50</span>–<span data-count="2" data-dec="2">2,00</span> €<small>/unidad</small></p>
+          <ul><li>Actimel, Danacol, jengibre</li><li>Hábito diario</li><li>Un solo beneficio</li></ul>
+        </article>
+      </div>
+      <aside class="notes">Precios consultados online en octubre de 2026. El suplemento se percibe técnico; el lácteo funcional solo resuelve una cosa. Clic: el hueco.</aside>
+    </section>
+
+    <!-- ============ 4 · LA GAMA ============ -->
+    <section class="slide slide--range" data-time="11:00" data-scene="range" data-section="fuerza">
+      <p class="kicker in">La gama</p>
+      <h2 class="title in">Elige el momento, <span class="nowrap">no el ingrediente.</span></h2>
+      <ul class="range-tags">
+        <li data-follow="impulso" style="--c: var(--c-impulso-ink)"><b>Impulso</b>Mañana · Energía<i>1,29 €</i></li>
+        <li data-follow="fuerza" style="--c: var(--c-fuerza-ink)"><b>Fuerza</b>Día · Músculo<i>1,79 €</i></li>
+        <li data-follow="firme" style="--c: var(--c-firme-ink)"><b>Ritmo</b>Día · Huesos<i>1,49 €</i></li>
+        <li data-follow="activo" style="--c: var(--c-activo-ink)"><b>Fuerza + Ritmo</b>Tarde · Creatina<i>2,29 €</i></li>
+        <li data-follow="pausa" style="--c: var(--c-pausa-ink)"><b>Pausa</b>Noche · Descanso<i>1,29 €</i></li>
+      </ul>
+      <aside class="notes">Persona 2 (Fuerza · día). AHORA pasad los botes impresos al jurado. Un color y un beneficio por momento; el comprador no lee ingredientes, busca su momento. Solo declaraciones del registro de la UE.</aside>
+    </section>
+
+    <!-- ============ 5 · PARA QUIÉN ============ -->
+    <section class="slide slide--who" data-time="12:00" data-scene="hidden" data-section="fuerza">
+      <p class="kicker in">Para quién</p>
+      <h2 class="title in">Para quien quiere seguir a su ritmo.</h2>
+      <div class="who">
+        <article class="who__card who__card--main in">
+          <img src="./pitch/img/jardin.jpg" alt="" />
+          <span class="badge">Principal</span>
+          <h3>+50 activos</h3>
+          <p>Compran Puleva cada semana. Quieren energía, fuerza y descanso, <strong>sin «tomar pastillas».</strong></p>
+        </article>
+        <article class="who__card in">
+          <img src="./pitch/img/gimnasio.jpg" alt="" />
+          <span class="badge badge--activo">Puerta de entrada</span>
+          <h3>35–50 que se cuidan</h3>
+          <p>Entrenan y empiezan a pensar en músculo y huesos. <strong>Entran por Fuerza + Ritmo.</strong></p>
+        </article>
+        <article class="who__card who__card--out step">
+          <div class="who__x" aria-hidden="true"></div>
+          <span class="badge badge--out">Descartado</span>
+          <h3>Deportista de alto rendimiento</h3>
+          <p>Ya está bien servido (Prozis, HSN) y compite por precio por gramo.</p>
+        </article>
+      </div>
+      <aside class="notes">Tono cálido, vital y moderno: nunca estética de farmacia ni de «personas mayores». Clic: lo que descartamos, y por qué.</aside>
+    </section>
+
+    <!-- ============ 6 · SUBMARCA ============ -->
+    <section class="slide slide--brand" data-time="13:00" data-scene="hero:impulso" data-section="fuerza">
+      <p class="kicker in">Arquitectura de marca</p>
+      <h2 class="brand__lockup in"><span class="cover__tempo">Tempo</span> <span class="byline">by <img src="./brand/puleva-logo.svg" alt="Puleva" /></span></h2>
+      <ol class="reasons">
+        <li class="in"><b>Tono propio.</b> Tempo puede hablar de melatonina o creatina sin estirar una marca de leche.</li>
+        <li class="in"><b>Confianza de Puleva.</b> «by Puleva» es lo que no tienen los especialistas ni la marca blanca.</li>
+        <li class="in"><b>Protección.</b> Si algo falla, el impacto recae en Tempo, no en la marca madre.</li>
+      </ol>
+      <aside class="notes">Submarca respaldada: ni solo Puleva ni marca independiente. Registro de «Tempo» en OEPM/EUIPO pendiente de comprobar (presupuestado).</aside>
+    </section>
+
+    <!-- ============ 7 · FUERZA + RITMO ============ -->
+    <section class="slide slide--mix" data-time="15:00" data-scene="hero:activo" data-section="firme">
+      <p class="kicker in" style="--k: var(--c-activo-ink)">El mix · Mediodía y tarde</p>
+      <h2 class="title in">Fuerza + Ritmo</h2>
+      <p class="lead in">Proteína, calcio y vitamina D. Y <strong>3 g de creatina en polvo dentro del tapón</strong>, que solo se mezcla al tomarlo.</p>
+      <ol class="steps-row">
+        <li class="step" data-action="powder"><b>1</b>Pulsa</li>
+        <li class="auto"><b>2</b>Agita</li>
+        <li class="auto"><b>3</b>Listo</li>
+      </ol>
+      <aside class="notes">Persona 3 (Ritmo · tarde). Hacedlo a la vez con el bote impreso: pulsar, cae, agitar. Es lo más diferencial: dadle su minuto. Clic en «Pulsa» lanza la animación del tapón. Tapón push-cap de proveedor; estabilidad en el presupuesto de I+D del año 1.</aside>
+    </section>
+
+    <!-- ============ 8 · PACK CRONOS ============ -->
+    <section class="slide slide--pack" data-time="16:00" data-scene="pack" data-section="firme">
+      <p class="kicker in">Pack Cronos · por el dios del tiempo</p>
+      <h2 class="title in">Un día entero <span class="nowrap">en una caja.</span></h2>
+      <p class="lead in">Impulso, Fuerza, Ritmo y Pausa: la rutina completa para probar el sistema.</p>
+      <div class="stamp step"><small>Pack Cronos</small><strong>5,29 €</strong><span>−9,7 % frente a sueltos</span></div>
+      <p class="pack__x4 step">Y para quien ya tiene su favorito: <b>Pack ×4</b> de una gama, de 4,69 € a 6,49 €.</p>
+      <aside class="notes">La caja impresa está delante del jurado: señaladla. Cronos es la puerta de prueba; ×4 es la recompra. Fuerza + Ritmo va aparte: ya es un mix.</aside>
+    </section>
+
+    <!-- ============ 9 · PRECIO ============ -->
+    <section class="slide slide--price" data-time="17:00" data-scene="hidden" data-section="firme">
+      <p class="kicker in">Precio</p>
+      <h2 class="title in">No competimos con la pastilla. <span class="nowrap">Competimos con Actimel.</span></h2>
+      <div class="ruler in" id="ruler" aria-label="Precio por dosis frente a la competencia"></div>
+      <p class="foot in">Precio por dosis (€). Todos los shots superan el 40 % de margen bruto objetivo para Puleva.</p>
+      <aside class="notes">El consumidor ya paga 1–2 € por cuidarse a diario en shots y lácteos funcionales. El sobreprecio frente al comprimido se justifica con formato, base láctea, tapón y rutina.</aside>
+    </section>
+
+    <!-- ============ 10 · DÓNDE ============ -->
+    <section class="slide slide--where" data-time="18:00" data-scene="hidden" data-section="firme">
+      <p class="kicker in">Dónde se compra</p>
+      <h2 class="title in">Donde ya está Puleva.</h2>
+      <div class="where">
+        <div class="where__channels">
+          <p class="channel channel--yes in"><span>✓</span>Hipermercados y supermercados<small>Carrefour, Alcampo, Eroski, El Corte Inglés · + online de apoyo</small></p>
+          <p class="channel channel--no step"><span>✕</span>Farmacia y parafarmacia<small>Justo la imagen que Tempo quiere evitar.</small></p>
+        </div>
+        <div class="stores in" aria-label="Puntos de venta por año">
+          <div class="stores__col"><b data-count="1500">1.500</b><i style="--v: 0.375"></i><span>Año 1</span></div>
+          <div class="stores__col"><b data-count="2500">2.500</b><i style="--v: 0.625"></i><span>Año 2</span></div>
+          <div class="stores__col"><b data-count="4000">4.000</b><i style="--v: 1"></i><span>Año 3</span></div>
+          <p class="stores__label">tiendas</p>
+        </div>
+      </div>
+      <aside class="notes">Descartar farmacia es una decisión, no un olvido. En tienda, un expositor que ordena la gama de la mañana a la noche (la caja impresa es la maqueta del lineal).</aside>
+    </section>
+
+    <!-- ============ 11 · NÚMEROS ============ -->
+    <section class="slide slide--numbers" data-time="19:00" data-scene="hidden" data-section="firme">
+      <p class="kicker in">Business case</p>
+      <h2 class="title in">EBITDA positivo en el año 3.</h2>
+      <div class="numbers">
+        <div class="chart in" id="chart" aria-label="Facturación neta y EBITDA por año"></div>
+        <div class="kpis">
+          <p class="kpi in"><b><span data-count="4.97" data-dec="2">4,97</span> M€</b>facturación neta en el año 3</p>
+          <p class="kpi in"><b>~<span data-count="51">51</span> %</b>margen bruto sobre facturación neta</p>
+          <p class="kpi kpi--warn step"><b>−4,33 M€</b>es lo que Puleva arriesga en 3 años. El retorno llega a partir del año 4.</p>
+        </div>
+      </div>
+      <aside class="notes">Decid lo malo antes de que lo pregunten: años 1 y 2 negativos por marketing (2 M€ con TV) y entrada en el lineal, más 1,35 M€ de CAPEX. Se valora la coherencia con las hipótesis, no la precisión.</aside>
+    </section>
+
+    <!-- ============ 12 · PALANCA ============ -->
+    <section class="slide slide--lever" data-time="20:00" data-scene="hidden" data-section="firme">
+      <p class="kicker in">La palanca</p>
+      <p class="lever in"><span class="lever__plus">+1</span> shot por tienda y semana <span class="lever__eq">=</span> <b>+<span data-count="105">105</span> k€</b> de EBITDA</p>
+      <div class="step lever__real" data-action="dots">
+        <div class="dots" id="dots" aria-hidden="true"></div>
+        <p>El plan pide <b>24 shots por tienda a la semana</b>: menos de 5 de cada referencia.</p>
+      </div>
+      <aside class="notes">Con un bote en la mano: «parece poco, y esa es la idea». Es la sensibilidad que más mueve el resultado (año 3).</aside>
+    </section>
+
+    <!-- ============ 13 · ANUNCIO ============ -->
+    <section class="slide slide--ad" data-time="21:30" data-scene="hidden" data-section="pausa">
+      <video class="ad" src="./pitch/tempo-anuncio.mp4" preload="auto" playsinline></video>
+      <aside class="notes">Persona 4 (Pausa · noche). «Así lo vería el consumidor en casa.» El vídeo arranca solo (35 s). Siguiente clic: cierre.</aside>
+    </section>
+
+    <!-- ============ 14 · CIERRE ============ -->
+    <section class="slide slide--end" data-time="23:00" data-scene="end" data-section="pausa">
+      <p class="end__pre in">Cuidarte no debería ser complicado.<br />Solo hay que elegir el momento.</p>
+      <h2 class="end__title in">A tu ritmo.</h2>
+      <p class="end__lockup in"><span class="cover__tempo">Tempo</span> <span class="byline">by <img src="./brand/puleva-logo.svg" alt="Puleva" /></span></p>
+      <figure class="qr in">
+        <img src="./pitch/qr.svg" alt="Código QR de la web 3D de Tempo" />
+        <figcaption>Pruébalo en 3D<small>0xjoseangel.github.io/tempo-puleva</small></figcaption>
+      </figure>
+      <p class="end__team in">José Ángel Carretero · Fernando José Gracia · Alicia Ruiz · Rubén Granero</p>
+      <aside class="notes">Dejad la caja con los botes delante del jurado durante las preguntas. Las diapositivas de reserva están a continuación (tecla →) o con la tecla R.</aside>
+    </section>
+
+    <!-- ============ RESERVA ============ -->
+    <section class="slide slide--backup" data-time="23:30" data-scene="hidden" data-backup>
+      <p class="kicker">Reserva · Cuenta de resultados</p>
+      <table class="pl">
+        <thead><tr><th></th><th>Año 1</th><th>Año 2</th><th>Año 3</th></tr></thead>
+        <tbody>
+          <tr><td>Tiendas · shots por tienda y semana</td><td>1.500 · 15</td><td>2.500 · 20</td><td>4.000 · 24</td></tr>
+          <tr><td>Shots vendidos</td><td>1.228.500</td><td>2.808.000</td><td>5.491.200</td></tr>
+          <tr class="pl__strong"><td>Facturación neta</td><td>1.123.640</td><td>2.555.454</td><td>4.972.171</td></tr>
+          <tr><td>Margen bruto (% s/ fact. neta)</td><td>574.501 (51,1 %)</td><td>1.300.278 (50,9 %)</td><td>2.517.605 (50,6 %)</td></tr>
+          <tr><td>Marketing y comunicación</td><td>−2.000.000</td><td>−1.500.000</td><td>−1.500.000</td></tr>
+          <tr><td>Equipo Tempo</td><td>−275.000</td><td>−330.000</td><td>−330.000</td></tr>
+          <tr><td>I+D y estudios</td><td>−250.000</td><td>−100.000</td><td>−100.000</td></tr>
+          <tr><td>Cuotas de referenciación</td><td>−300.000</td><td>−150.000</td><td>−150.000</td></tr>
+          <tr><td>Regulatorio y registro de marca</td><td>−50.000</td><td>−20.000</td><td>−20.000</td></tr>
+          <tr class="pl__strong"><td>EBITDA</td><td class="neg">−2.300.499</td><td class="neg">−799.722</td><td class="pos">417.605</td></tr>
+        </tbody>
+      </table>
+      <p class="foot">€. Facturación = ventas de Puleva a la distribución, sin IVA, tras el 30 % del distribuidor y un 10 % de promoción. Mix: Impulso 20 %, Fuerza 15 %, Ritmo 15 %, Fuerza + Ritmo 25 %, Pausa 25 %.</p>
+      <aside class="notes">Solo si preguntan por el detalle.</aside>
+    </section>
+
+    <section class="slide slide--backup" data-time="23:30" data-scene="hidden" data-backup>
+      <p class="kicker">Reserva · Inversión y caja</p>
+      <table class="pl">
+        <thead><tr><th></th><th>Año 1</th><th>Año 2</th><th>Año 3</th></tr></thead>
+        <tbody>
+          <tr><td>Línea de llenado de shots (planta existente)</td><td>1.000.000</td><td>0</td><td>300.000</td></tr>
+          <tr><td>Moldes y adaptación al push-cap</td><td>200.000</td><td>0</td><td>0</td></tr>
+          <tr><td>Diseño de marca, packaging y expositores</td><td>150.000</td><td>0</td><td>0</td></tr>
+          <tr class="pl__strong"><td>Total inversión</td><td>1.350.000</td><td>0</td><td>300.000</td></tr>
+          <tr><td>Flujo de caja (EBITDA − inversión)</td><td class="neg">−3.650.499</td><td class="neg">−799.722</td><td class="pos">117.605</td></tr>
+          <tr class="pl__strong"><td>Flujo de caja acumulado</td><td class="neg">−3.650.499</td><td class="neg">−4.450.221</td><td class="neg">−4.332.617</td></tr>
+        </tbody>
+      </table>
+      <p class="foot">Marketing: TV 45 %, punto de venta 20 %, digital 20 %, radio y prensa 10 %, prescriptores 5 % (2,0 M€ el año 1; 1,5 M€ después).</p>
+      <aside class="notes">El retorno llega a partir del año 4 si se mantiene el crecimiento.</aside>
+    </section>
+
+    <section class="slide slide--backup" data-time="23:30" data-scene="hidden" data-backup>
+      <p class="kicker">Reserva · Regulación e I+D</p>
+      <div class="qa">
+        <article><h3>Claims</h3><p>Solo declaraciones del registro de la UE. Melatonina por debajo de 2 mg (1 mg antes de acostarse). Creatina: 3 g/día con entrenamiento de resistencia, en mayores de 55. <b>Pendiente de validar.</b></p></article>
+        <article><h3>Clasificación</h3><p>Complemento alimenticio o alimento enriquecido, shot a shot, y su notificación. Asesoría externa + especialista regulatorio en el equipo.</p></article>
+        <article><h3>Tapón y estabilidad</h3><p>Push-cap de proveedor de packaging; Puleva integra el llenado. Estabilidad de creatina, vitamina D y melatonina: <b>250 k€ de I+D el año 1</b>, 100 k€/año después.</p></article>
+        <article><h3>Equipo</h3><p>Unidad Tempo de 5 personas el año 1 y 6 desde el año 2. Dentro: marca, trade, I+D. Fuera: category manager, regulatorio, e-commerce.</p></article>
+      </div>
+      <aside class="notes">Decid con naturalidad que está pendiente de validar: da credibilidad.</aside>
+    </section>
+
+    <section class="slide slide--backup" data-time="23:30" data-scene="hidden" data-backup>
+      <p class="kicker">Reserva · Preguntas difíciles</p>
+      <div class="qa">
+        <article><h3>¿Por qué 1,29 € si la pastilla cuesta 0,10 €?</h3><p>Porque no competimos con la pastilla, sino con Actimel o un shot de jengibre (0,50–2,00 €): formato listo para tomar, base láctea, tapón con creatina y rutina como sistema.</p></article>
+        <article><h3>¿No daña a la marca Puleva?</h3><p>Para eso está la submarca: Tempo da tono propio y absorbe el riesgo; «by Puleva» aporta la confianza.</p></article>
+        <article><h3>¿Por qué aceptaría el distribuidor?</h3><p>Más valor por centímetro de lineal, recompra diaria, un comprador nuevo (+50) en la categoría, TV y expositor de apoyo.</p></article>
+        <article><h3>¿Y si la rotación no llega?</h3><p>Es la palanca: cada shot por tienda y semana son ~105 k€ de EBITDA. Cronos para prueba, ×4 y online para recompra.</p></article>
+      </div>
+      <aside class="notes">Respuestas cortas; si insisten, ir a la cuenta de resultados.</aside>
+    </section>
+
+    <!-- HUD -->
+    <footer class="hud" aria-hidden="true">
+      <div class="hud__clock"><span class="hud__dot"></span><span id="clock">07:00</span><span id="moment"></span></div>
+      <div class="hud__bar" id="bar"></div>
+      <div class="hud__page" id="page"></div>
+    </footer>
+  </div>
+
+  <div class="notes-panel" id="notes" hidden>
+    <div class="notes-panel__head"><span id="timer">00:00</span><span id="target"></span><span class="notes-panel__keys">← → pasar · N notas · F pantalla completa · B negro · R reserva</span></div>
+    <p id="notes-text"></p>
+  </div>
+  <div class="blackout" id="blackout" hidden></div>
+
+  <script type="module" src="./src/pitch/main.js"></script>
+</body>
+</html>

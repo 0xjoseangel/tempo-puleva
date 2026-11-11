@@ -44,7 +44,7 @@ export function createLabelTexture(product, aspect, renderer) {
   return tex;
 }
 
-function drawLabel(ctx, W, H, p) {
+export function drawLabel(ctx, W, H, p) {
   const c = p.color;
 
   // Fondo papel con un leve degradado

@@ -5,7 +5,7 @@ import { createPowderCap } from './powderCap.js';
 // Unidades: 1 = 1 cm aprox. Todas las gamas comparten el mismo envase.
 const SHOT_ML = 100;
 
-function dimensions(volumeMl = SHOT_ML) {
+export function dimensions(volumeMl = SHOT_ML) {
   const s = Math.cbrt(volumeMl / 60);
   const r = 1.8 * Math.pow(s, 0.6);
   return {

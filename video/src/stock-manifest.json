@@ -1,0 +1,32 @@
+{
+  "hook": {
+    "file": "stock/hook.mp4",
+    "seconds": 19.24,
+    "start": 0
+  },
+  "dia": {
+    "file": "stock/dia.mp4",
+    "seconds": 11.32,
+    "start": 0
+  },
+  "manana": {
+    "file": "stock/mixkit-woman-stretching-in-the-morning-before-starting-her-day-31407-full-hd.mp4",
+    "seconds": 8.466792,
+    "start": 0
+  },
+  "mix": {
+    "file": "stock/mixkit-woman-and-man-doing-dumbbell-reps-together-44413-full-hd.mp4",
+    "seconds": 15.140125,
+    "start": 0
+  },
+  "noche": {
+    "file": "stock/mixkit-loving-couple-sleeping-together-at-night-42981-full-hd.mp4",
+    "seconds": 9.592917,
+    "start": 0
+  },
+  "cierre": {
+    "file": "stock/mixkit-family-having-dinner-in-the-garden-on-a-sunny-day-23135-hd-ready.mp4",
+    "seconds": 16.76,
+    "start": 0
+  }
+}

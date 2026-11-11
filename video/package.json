@@ -1,0 +1,21 @@
+{
+  "name": "tempo-anuncio",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "voz": "node --env-file=.env scripts/voiceover.mjs",
+    "voz:musica": "node --env-file=.env scripts/voiceover.mjs --music",
+    "studio": "remotion studio src/index.js",
+    "render": "remotion render src/index.js TempoAnuncio out/tempo-anuncio.mp4",
+    "stock": "node --env-file=.env scripts/stock.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.539",
+    "@remotion/google-fonts": "^4.0.539",
+    "@remotion/transitions": "^4.0.539",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "remotion": "^4.0.539"
+  }
+}
