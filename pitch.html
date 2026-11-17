@@ -54,7 +54,7 @@
     </section>
 
     <!-- ============ 2 · INSIGHT ============ -->
-    <section class="slide slide--insight" data-time="08:00" data-scene="hidden" data-section="impulso">
+    <section class="slide slide--insight" data-time="07:20" data-scene="hidden" data-section="impulso">
       <img class="insight__photo in" src="./pitch/img/manana.jpg" alt="" />
       <div class="insight__copy">
         <p class="kicker in">El insight</p>
@@ -65,7 +65,7 @@
     </section>
 
     <!-- ============ 3 · EL HUECO ============ -->
-    <section class="slide slide--gap" data-time="09:30" data-scene="hidden" data-section="impulso">
+    <section class="slide slide--gap" data-time="07:40" data-scene="hidden" data-section="impulso">
       <p class="kicker in">La oportunidad</p>
       <h2 class="title in">Entre dos lineales hay un hueco.</h2>
       <div class="gap">
@@ -88,18 +88,69 @@
       <aside class="notes">Precios consultados online en octubre de 2026. El suplemento se percibe técnico; el lácteo funcional solo resuelve una cosa. Clic: el hueco.</aside>
     </section>
 
-    <!-- ============ 4 · LA GAMA ============ -->
-    <section class="slide slide--range" data-time="11:00" data-scene="range" data-section="fuerza">
-      <p class="kicker in">La gama</p>
-      <h2 class="title in">Elige el momento, <span class="nowrap">no el ingrediente.</span></h2>
-      <ul class="range-tags">
-        <li data-follow="impulso" style="--c: var(--c-impulso-ink)"><b>Impulso</b>Mañana · Energía<i>1,29 €</i></li>
-        <li data-follow="fuerza" style="--c: var(--c-fuerza-ink)"><b>Fuerza</b>Día · Músculo<i>1,79 €</i></li>
-        <li data-follow="firme" style="--c: var(--c-firme-ink)"><b>Ritmo</b>Día · Huesos<i>1,49 €</i></li>
-        <li data-follow="activo" style="--c: var(--c-activo-ink)"><b>Fuerza + Ritmo</b>Tarde · Creatina<i>2,29 €</i></li>
-        <li data-follow="pausa" style="--c: var(--c-pausa-ink)"><b>Pausa</b>Noche · Descanso<i>1,29 €</i></li>
-      </ul>
-      <aside class="notes">Persona 2 (Fuerza · día). AHORA pasad los botes impresos al jurado. Un color y un beneficio por momento; el comprador no lee ingredientes, busca su momento. Solo declaraciones del registro de la UE.</aside>
+    <!-- ============ 4 · LA GAMA: UN DÍA CON TEMPO ============ -->
+    <!-- Primero la gama entera; cada paso mueve el reloj (data-time) y cambia el shot en 3D (data-scene) -->
+    <section class="slide slide--range slide--day" data-time="07:55" data-scene="range" data-section="fuerza">
+      <p class="kicker in">La gama · Un día con Tempo</p>
+      <div class="day__intro">
+        <h2 class="title in">Elige el momento, <span class="nowrap">no el ingrediente.</span></h2>
+        <ul class="range-tags">
+          <li data-follow="impulso" style="--c: var(--c-impulso-ink)"><b>Impulso</b>Mañana · Energía<i>1,29 €</i></li>
+          <li data-follow="fuerza" style="--c: var(--c-fuerza-ink)"><b>Fuerza</b>Día · Músculo<i>1,79 €</i></li>
+          <li data-follow="firme" style="--c: var(--c-firme-ink)"><b>Ritmo</b>Día · Huesos<i>1,49 €</i></li>
+          <li data-follow="activo" style="--c: var(--c-activo-ink)"><b>Fuerza + Ritmo</b>Tarde · Creatina<i>2,29 €</i></li>
+          <li data-follow="pausa" style="--c: var(--c-pausa-ink)"><b>Pausa</b>Noche · Descanso<i>1,29 €</i></li>
+        </ul>
+      </div>
+      <div class="day">
+        <article class="day__panel step" data-time="08:00" data-scene="hero:impulso" style="--c: var(--c-impulso)">
+          <p class="day__when">08:00 · Al despertar</p>
+          <h2 class="day__name">Impulso</h2>
+          <ul class="day__chips"><li>Magnesio</li><li>Vitamina B6</li><li>Vitamina B12</li></ul>
+          <p class="day__why">Para arrancar. El magnesio y las vitaminas B6 y B12 ayudan a <strong>reducir el cansancio</strong> justo cuando empieza el día.</p>
+        </article>
+        <article class="day__panel step" data-time="11:00" data-scene="hero:fuerza" style="--c: var(--c-fuerza)">
+          <p class="day__when">11:00 · Entre horas</p>
+          <h2 class="day__name">Fuerza</h2>
+          <ul class="day__chips"><li>~15 g de proteína láctea</li><li>Vitamina D</li></ul>
+          <p class="day__why">El músculo se cuida <strong>repartiendo la proteína</strong> en varias tomas. Con los años cuesta llegar solo con las comidas: un shot entre horas lo completa.</p>
+        </article>
+        <article class="day__panel step" data-time="14:00" data-scene="hero:firme" style="--c: var(--c-firme)">
+          <p class="day__when">14:00 · Con la comida</p>
+          <h2 class="day__name">Ritmo</h2>
+          <ul class="day__chips"><li>Calcio</li><li>Vitamina D</li></ul>
+          <p class="day__why">El calcio mantiene los huesos y la vitamina D <strong>ayuda a absorberlo</strong>. Van juntos, por eso van en el mismo bote.</p>
+        </article>
+        <article class="day__panel step" data-time="18:30" data-scene="hero:activo" style="--c: var(--c-activo)">
+          <p class="day__when">18:30 · Después de moverte</p>
+          <h2 class="day__name">Fuerza + Ritmo</h2>
+          <ul class="day__chips"><li>Proteína</li><li>Calcio</li><li>Vitamina D</li><li>3 g de creatina</li></ul>
+          <p class="day__why">La creatina, que <strong>potencia el ejercicio de fuerza</strong>, va en polvo dentro del tapón y solo se mezcla al tomarlo.</p>
+          <ol class="steps-row">
+            <li class="step" data-action="powder"><b>1</b>Pulsa</li>
+            <li class="auto"><b>2</b>Agita</li>
+            <li class="auto"><b>3</b>Listo</li>
+          </ol>
+        </article>
+        <article class="day__panel step" data-time="22:30" data-scene="hero:pausa" style="--c: var(--c-pausa)">
+          <p class="day__when">22:30 · Antes de dormir</p>
+          <h2 class="day__name">Pausa</h2>
+          <ul class="day__chips"><li>Melatonina</li></ul>
+          <p class="day__why">La melatonina ayuda a <strong>coger el sueño antes</strong>. Solo para las noches que lo necesites.</p>
+        </article>
+      </div>
+      <ol class="day__line in" aria-hidden="true">
+        <li style="--c: var(--c-impulso)">08:00<b>Impulso</b></li>
+        <li style="--c: var(--c-fuerza)">11:00<b>Fuerza</b></li>
+        <li style="--c: var(--c-firme)">14:00<b>Ritmo</b></li>
+        <li style="--c: var(--c-activo)">18:30<b>Fuerza + Ritmo</b></li>
+        <li style="--c: var(--c-pausa)">22:30<b>Pausa</b></li>
+      </ol>
+      <aside class="notes">
+        Persona 2 (Fuerza · día). AHORA pasad los botes impresos al jurado. Primero la gama: un color y un beneficio por momento; el comprador no lee ingredientes, busca su momento.
+        Después, un clic por momento: contadlo como el día de una persona real. El cielo cambia y aparece el shot de esa hora.
+        A las 18:30, el tapón: hacedlo a la vez con el bote impreso (pulsar, cae, agitar). Es lo más diferencial: dadle su minuto. Tapón push-cap de proveedor; estabilidad en el presupuesto de I+D del año 1.
+      </aside>
     </section>
 
     <!-- ============ 5 · PARA QUIÉN ============ -->
@@ -141,19 +192,6 @@
       <aside class="notes">Submarca respaldada: ni solo Puleva ni marca independiente. Registro de «Tempo» en OEPM/EUIPO pendiente de comprobar (presupuestado).</aside>
     </section>
 
-    <!-- ============ 7 · FUERZA + RITMO ============ -->
-    <section class="slide slide--mix" data-time="15:00" data-scene="hero:activo" data-section="firme">
-      <p class="kicker in" style="--k: var(--c-activo-ink)">El mix · Mediodía y tarde</p>
-      <h2 class="title in">Fuerza + Ritmo</h2>
-      <p class="lead in">Proteína, calcio y vitamina D. Y <strong>3 g de creatina en polvo dentro del tapón</strong>, que solo se mezcla al tomarlo.</p>
-      <ol class="steps-row">
-        <li class="step" data-action="powder"><b>1</b>Pulsa</li>
-        <li class="auto"><b>2</b>Agita</li>
-        <li class="auto"><b>3</b>Listo</li>
-      </ol>
-      <aside class="notes">Persona 3 (Ritmo · tarde). Hacedlo a la vez con el bote impreso: pulsar, cae, agitar. Es lo más diferencial: dadle su minuto. Clic en «Pulsa» lanza la animación del tapón. Tapón push-cap de proveedor; estabilidad en el presupuesto de I+D del año 1.</aside>
-    </section>
-
     <!-- ============ 8 · PACK CRONOS ============ -->
     <section class="slide slide--pack" data-time="16:00" data-scene="pack" data-section="firme">
       <p class="kicker in">Pack Cronos · por el dios del tiempo</p>
@@ -169,27 +207,8 @@
       <p class="kicker in">Precio</p>
       <h2 class="title in">No competimos con la pastilla. <span class="nowrap">Competimos con Actimel.</span></h2>
       <div class="ruler in" id="ruler" aria-label="Precio por dosis frente a la competencia"></div>
-      <p class="foot in">Precio por dosis (€). Todos los shots superan el 40 % de margen bruto objetivo para Puleva.</p>
+      <p class="foot in">Precio por dosis (€). Todos los shots superan el 40 % de margen bruto objetivo; de media, ~51 % para Puleva.</p>
       <aside class="notes">El consumidor ya paga 1–2 € por cuidarse a diario en shots y lácteos funcionales. El sobreprecio frente al comprimido se justifica con formato, base láctea, tapón y rutina.</aside>
-    </section>
-
-    <!-- ============ 10 · DÓNDE ============ -->
-    <section class="slide slide--where" data-time="18:00" data-scene="hidden" data-section="firme">
-      <p class="kicker in">Dónde se compra</p>
-      <h2 class="title in">Donde ya está Puleva.</h2>
-      <div class="where">
-        <div class="where__channels">
-          <p class="channel channel--yes in"><span>✓</span>Hipermercados y supermercados<small>Carrefour, Alcampo, Eroski, El Corte Inglés · + online de apoyo</small></p>
-          <p class="channel channel--no step"><span>✕</span>Farmacia y parafarmacia<small>Justo la imagen que Tempo quiere evitar.</small></p>
-        </div>
-        <div class="stores in" aria-label="Puntos de venta por año">
-          <div class="stores__col"><b data-count="1500">1.500</b><i style="--v: 0.375"></i><span>Año 1</span></div>
-          <div class="stores__col"><b data-count="2500">2.500</b><i style="--v: 0.625"></i><span>Año 2</span></div>
-          <div class="stores__col"><b data-count="4000">4.000</b><i style="--v: 1"></i><span>Año 3</span></div>
-          <p class="stores__label">tiendas</p>
-        </div>
-      </div>
-      <aside class="notes">Descartar farmacia es una decisión, no un olvido. En tienda, un expositor que ordena la gama de la mañana a la noche (la caja impresa es la maqueta del lineal).</aside>
     </section>
 
     <!-- ============ 11 · NÚMEROS ============ -->
@@ -200,22 +219,11 @@
         <div class="chart in" id="chart" aria-label="Facturación neta y EBITDA por año"></div>
         <div class="kpis">
           <p class="kpi in"><b><span data-count="4.97" data-dec="2">4,97</span> M€</b>facturación neta en el año 3</p>
-          <p class="kpi in"><b>~<span data-count="51">51</span> %</b>margen bruto sobre facturación neta</p>
+          <p class="kpi kpi--small in"><b>1.500 → 4.000</b>tiendas de híper y súper en 3 años</p>
           <p class="kpi kpi--warn step"><b>−4,33 M€</b>es lo que Puleva arriesga en 3 años. El retorno llega a partir del año 4.</p>
         </div>
       </div>
       <aside class="notes">Decid lo malo antes de que lo pregunten: años 1 y 2 negativos por marketing (2 M€ con TV) y entrada en el lineal, más 1,35 M€ de CAPEX. Se valora la coherencia con las hipótesis, no la precisión.</aside>
-    </section>
-
-    <!-- ============ 12 · PALANCA ============ -->
-    <section class="slide slide--lever" data-time="20:00" data-scene="hidden" data-section="firme">
-      <p class="kicker in">La palanca</p>
-      <p class="lever in"><span class="lever__plus">+1</span> shot por tienda y semana <span class="lever__eq">=</span> <b>+<span data-count="105">105</span> k€</b> de EBITDA</p>
-      <div class="step lever__real" data-action="dots">
-        <div class="dots" id="dots" aria-hidden="true"></div>
-        <p>El plan pide <b>24 shots por tienda a la semana</b>: menos de 5 de cada referencia.</p>
-      </div>
-      <aside class="notes">Con un bote en la mano: «parece poco, y esa es la idea». Es la sensibilidad que más mueve el resultado (año 3).</aside>
     </section>
 
     <!-- ============ 13 · ANUNCIO ============ -->
@@ -296,6 +304,34 @@
         <article><h3>¿Y si la rotación no llega?</h3><p>Es la palanca: cada shot por tienda y semana son ~105 k€ de EBITDA. Cronos para prueba, ×4 y online para recompra.</p></article>
       </div>
       <aside class="notes">Respuestas cortas; si insisten, ir a la cuenta de resultados.</aside>
+    </section>
+
+    <section class="slide slide--where" data-time="23:30" data-scene="hidden" data-backup>
+      <p class="kicker in">Reserva · Dónde se compra</p>
+      <h2 class="title in">Donde ya está Puleva.</h2>
+      <div class="where">
+        <div class="where__channels">
+          <p class="channel channel--yes in"><span>✓</span>Hipermercados y supermercados<small>Carrefour, Alcampo, Eroski, El Corte Inglés · + online de apoyo</small></p>
+          <p class="channel channel--no step"><span>✕</span>Farmacia y parafarmacia<small>Justo la imagen que Tempo quiere evitar.</small></p>
+        </div>
+        <div class="stores in" aria-label="Puntos de venta por año">
+          <div class="stores__col"><b data-count="1500">1.500</b><i style="--v: 0.375"></i><span>Año 1</span></div>
+          <div class="stores__col"><b data-count="2500">2.500</b><i style="--v: 0.625"></i><span>Año 2</span></div>
+          <div class="stores__col"><b data-count="4000">4.000</b><i style="--v: 1"></i><span>Año 3</span></div>
+          <p class="stores__label">tiendas</p>
+        </div>
+      </div>
+      <aside class="notes">Descartar farmacia es una decisión, no un olvido. En tienda, un expositor que ordena la gama de la mañana a la noche (la caja impresa es la maqueta del lineal).</aside>
+    </section>
+
+    <section class="slide slide--lever" data-time="23:30" data-scene="hidden" data-backup>
+      <p class="kicker in">Reserva · La palanca</p>
+      <p class="lever in"><span class="lever__plus">+1</span> shot por tienda y semana <span class="lever__eq">=</span> <b>+<span data-count="105">105</span> k€</b> de EBITDA</p>
+      <div class="step lever__real" data-action="dots">
+        <div class="dots" id="dots" aria-hidden="true"></div>
+        <p>El plan pide <b>24 shots por tienda a la semana</b>: menos de 5 de cada referencia.</p>
+      </div>
+      <aside class="notes">Con un bote en la mano: «parece poco, y esa es la idea». Es la sensibilidad que más mueve el resultado (año 3).</aside>
     </section>
 
     <!-- HUD -->

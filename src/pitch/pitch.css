@@ -129,8 +129,7 @@ body.dark { --ink: var(--c-cream); --ink-soft: #B8C2D3; }
 .reasons li::before { content: counter(r); position: absolute; left: 0; top: -4px; width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; background: var(--c-fuerza); color: #fff; font: 800 32px var(--font-display); }
 .reasons b { color: var(--ink); font-family: var(--font-display); }
 
-/* ---------- 7 · Mix ---------- */
-.slide--mix .title { font-size: 150px; }
+/* ---------- Tapón de Fuerza + Ritmo ---------- */
 .steps-row { list-style: none; display: flex; gap: 24px; margin: 70px 0 0; padding: 0; }
 .steps-row li { display: flex; align-items: center; gap: 18px; padding: 18px 40px 18px 18px; border-radius: 999px; font: 700 44px var(--font-display); border: 4px solid var(--c-activo); color: var(--c-activo-ink); }
 .steps-row li.auto { opacity: 0; }
@@ -185,11 +184,12 @@ body.dark { --ink: var(--c-cream); --ink-soft: #B8C2D3; }
 .numbers { display: grid; grid-template-columns: 1000px 1fr; gap: 80px; margin-top: 50px; }
 .chart svg { width: 1000px; height: 640px; overflow: visible; }
 .chart text { font-family: var(--font-display); fill: var(--ink); }
-.kpis { display: grid; gap: 34px; align-content: start; padding-top: 30px; }
+.kpis { display: grid; gap: 26px; align-content: start; padding-top: 10px; }
 .kpi { margin: 0; font-size: 28px; line-height: 1.35; color: var(--ink-soft); }
 .kpi b { display: block; font: 800 88px/1 var(--font-display); color: var(--ink); letter-spacing: -0.03em; margin-bottom: 8px; }
 .kpi--warn { padding: 26px 30px; border-radius: 28px; background: rgb(255 255 255 / 0.55); }
 .kpi--warn b { font-size: 64px; color: var(--c-fuerza-ink); }
+.kpi--small b { font-size: 52px; }
 
 /* ---------- 12 · Palanca ---------- */
 .lever { margin: 40px 0 0; font: 700 64px/1.25 var(--font-display); letter-spacing: -0.02em; max-width: 1640px; }
@@ -255,3 +255,23 @@ body.dark { --ink: var(--c-cream); --ink-soft: #B8C2D3; }
 #target { font-size: 18px; font-weight: 500; opacity: 0.7; }
 .notes-panel p { margin: 0; max-width: 1400px; }
 .blackout { position: fixed; inset: 0; background: #000; z-index: 20; }
+
+/* ---------- Un día con Tempo ---------- */
+.day { position: absolute; left: 140px; top: 165px; width: 980px; height: 640px; }
+.day .steps-row { margin-top: 30px; }
+.day .steps-row li { font-size: 34px; padding: 12px 32px 12px 12px; }
+.day .steps-row b { width: 52px; height: 52px; font-size: 28px; }
+.day__panel { position: absolute; inset: 0; }
+.day__when { margin: 0; font: 700 34px var(--font-display); color: color-mix(in srgb, var(--c) 70%, var(--ink)); letter-spacing: 0.02em; }
+.day__name { margin: 6px 0 0; white-space: nowrap; font: 800 128px/1 var(--font-display); letter-spacing: -0.03em; color: var(--ink); }
+.day__chips { list-style: none; margin: 34px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 14px; }
+.day__chips li { padding: 12px 28px; border-radius: 999px; background: var(--c); color: #fff; font: 700 30px var(--font-display); }
+.day__why { margin: 40px 0 0; max-width: 900px; font-size: 38px; line-height: 1.4; color: var(--ink-soft); }
+.day__why strong { color: var(--ink); }
+.day__line { transition: filter 0.4s; position: absolute; left: 140px; width: 1000px; bottom: 120px; margin: 0; padding: 0; list-style: none; display: flex; justify-content: space-between; border-top: 3px solid color-mix(in srgb, var(--ink-soft) 35%, transparent); }
+.day__line li { position: relative; padding-top: 30px; font: 600 24px var(--font-display); color: var(--ink-soft); opacity: 0.55; transition: opacity 0.4s; }
+.day__line li::before { content: ''; position: absolute; left: 0; top: -12px; width: 20px; height: 20px; border-radius: 50%; background: var(--c); transition: scale 0.4s; }
+.day__line li b { display: block; font-size: 28px; color: var(--ink); }
+.day__line li.is-on { opacity: 1; }
+.day__line li.is-on::before { scale: 1.6; }
+.slide--day.is-intro .day__line { filter: opacity(0); }

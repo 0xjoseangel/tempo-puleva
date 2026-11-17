@@ -207,7 +207,7 @@ const actions = {
     if (instant) { mixSteps.forEach((s) => s.classList.add('is-on')); return; }
     stage3d?.powder('activo');
     [1.9, 2.7].forEach((t, i) => gsap.delayedCall(t, () => {
-      if (slides[index].classList.contains('slide--mix')) {
+      if (slides[index].contains(mixSteps[0])) {
         gsap.to(mixSteps[i + 1], { opacity: 1, y: 0, duration: 0.4 });
         mixSteps[i + 1].classList.add('is-on');
       }
@@ -241,6 +241,41 @@ function hideStep(el) {
   if (a) actions[`un${a}`]?.();
 }
 
+// Pasos con data-time / data-scene: mueven el reloj y cambian el shot dentro de la diapositiva
+function momentOf(slide) {
+  const shown = stepsOf(slide).slice(0, step);
+  const marks = [...slide.querySelectorAll('[data-time]')].filter((el) => !el.classList.contains('step') || shown.includes(el));
+  return marks.at(-1) || slide;
+}
+
+function syncMoment(slide, instant = false) {
+  const at = momentOf(slide);
+  const h = hours(at.dataset.time);
+  document.body.classList.toggle('dark', isDark(h));
+  gsap.to(sky, { h, duration: instant ? 0 : 1.6, ease: 'power2.inOut', overwrite: true, onUpdate: () => paintSky(sky.h) });
+  paintSky(sky.h);
+  momentEl.textContent = `· ${moment(h)}`;
+  // Un día con Tempo: un solo panel a la vista y su hora marcada en la línea
+  const panels = [...slide.querySelectorAll('.day__panel')];
+  if (panels.length) {
+    const k = panels.indexOf(at);
+    panels.forEach((el, j) => gsap.to(el, j === k
+      ? { opacity: 1, y: 0, duration: instant ? 0 : 0.7, delay: instant ? 0 : 0.15, ease: 'power3.out', overwrite: 'auto' }
+      : { opacity: 0, y: j < k ? -30 : 30, duration: instant ? 0 : 0.35, overwrite: 'auto' }));
+    slide.querySelectorAll('.day__line li').forEach((li, j) => li.classList.toggle('is-on', j === k));
+    // Antes del primer momento se ve la gama entera
+    gsap.to(slide.querySelector('.day__intro'), { opacity: k < 0 ? 1 : 0, duration: instant ? 0 : 0.4, overwrite: 'auto' });
+    slide.classList.toggle('is-intro', k < 0);
+  }
+  return at;
+}
+
+function moveMoment(el) {
+  if (!el.dataset.time) return;
+  const at = syncMoment(slides[index]);
+  stage3d?.setScene(at.dataset.scene || slides[index].dataset.scene || 'hidden');
+}
+
 function go(i, { atEnd = false, instant = false } = {}) {
   i = Math.max(0, Math.min(slides.length - 1, i));
   const prev = slides[index];
@@ -258,18 +293,13 @@ function go(i, { atEnd = false, instant = false } = {}) {
 
   const steps = stepsOf(slide);
   if (steps.length) gsap.set(steps, { opacity: 0 });
-  if (slide.classList.contains('slide--mix')) actions.unpowder();
+  if (slide.contains(mixSteps[0])) actions.unpowder();
   if (slide.classList.contains('slide--hook')) actions.uncalm();
   step = atEnd ? steps.length : 0;
   steps.slice(0, step).forEach((el) => showStep(el, true));
   enterAnim(slide);
 
-  // Hora, cielo y modo oscuro
-  const h = hours(slide.dataset.time);
-  document.body.classList.toggle('dark', isDark(h));
-  gsap.to(sky, { h, duration: instant ? 0 : 1.6, ease: 'power2.inOut', overwrite: true, onUpdate: () => paintSky(sky.h) });
-  paintSky(sky.h);
-  momentEl.textContent = `· ${moment(h)}`;
+  const at = syncMoment(slide, instant);
 
   // HUD
   const sec = sectionOf(slide);
@@ -289,20 +319,20 @@ function go(i, { atEnd = false, instant = false } = {}) {
     video.play().catch(() => {});
   }
 
-  stage3d?.setScene(slide.dataset.scene || 'hidden', { instant });
+  stage3d?.setScene(at.dataset.scene || slide.dataset.scene || 'hidden', { instant });
   history.replaceState(null, '', `#${i + 1}`);
   updateNotes();
 }
 
 function next() {
   const steps = stepsOf(slides[index]);
-  if (step < steps.length) showStep(steps[step++]);
+  if (step < steps.length) { showStep(steps[step]); moveMoment(steps[step++]); }
   else if (index < slides.length - 1) go(index + 1);
 }
 
 function prev() {
   const steps = stepsOf(slides[index]);
-  if (step > 0) hideStep(steps[--step]);
+  if (step > 0) { hideStep(steps[--step]); moveMoment(steps[step]); }
   else if (index > 0) go(index - 1, { atEnd: true });
 }
 
