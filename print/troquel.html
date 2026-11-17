@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tempo by Puleva · troquel de la caja en cartulina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Outfit:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./hojas.css" />
+</head>
+<body>
+  <script type="module">
+    import { renderDieline } from './troquel.js';
+    // ?pack=cronos (por defecto) o el id de una gama: impulso, fuerza, firme, pausa
+    await renderDieline(new URLSearchParams(location.search).get('pack') || undefined);
+    document.body.dataset.ready = '1';
+  </script>
+</body>
+</html>

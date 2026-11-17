@@ -1,5 +1,5 @@
 // Genera los PDF a tamaño real de etiquetas y caja con Chrome headless (protocolo DevTools).
-// Uso: npm run print:pdf  → print/out/etiquetas-botes.pdf y print/out/caja-pack.pdf
+// Uso: npm run print:pdf  → print/out/etiquetas-botes.pdf, caja-pack.pdf y caja-cartulina*.pdf (Cronos y ×4 de cada gama)
 import { createServer } from 'vite';
 import { spawn } from 'node:child_process';
 import { mkdir, rm, writeFile } from 'node:fs/promises';
@@ -48,13 +48,15 @@ async function connect() {
 
 try {
   const send = await connect();
-  for (const [page, file] of [['etiquetas', 'etiquetas-botes.pdf'], ['caja', 'caja-pack.pdf']]) {
-    await send('Page.navigate', { url: `${base}print/${page}.html` });
+  // Troquel en cartulina: Pack Cronos y un Pack ×4 por gama (los ids internos firme = Ritmo)
+  const dielines = [['troquel.html', 'caja-cartulina.pdf'], ...Object.entries({ impulso: 'impulso', fuerza: 'fuerza', firme: 'ritmo', pausa: 'pausa' }).map(([id, name]) => [`troquel.html?pack=${id}`, `caja-cartulina-x4-${name}.pdf`])];
+  for (const [page, file] of [['etiquetas.html', 'etiquetas-botes.pdf'], ['caja.html', 'caja-pack.pdf'], ...dielines]) {
+    await send('Page.navigate', { url: `${base}print/${page}` });
     // La página marca body[data-ready] cuando ha cargado fuentes y logo y ha dibujado todo
     for (let i = 0; ; i++) {
       const { result } = await send('Runtime.evaluate', { expression: 'document.body?.dataset.ready === "1" && document.fonts.status === "loaded"' });
       if (result.value) break;
-      if (i > 150) throw new Error(`${page}.html no terminó de dibujarse`);
+      if (i > 150) throw new Error(`${page} no terminó de dibujarse`);
       await sleep(200);
     }
     const { data } = await send('Page.printToPDF', { preferCSSPageSize: true, printBackground: true, marginTop: 0, marginBottom: 0, marginLeft: 0, marginRight: 0 });

@@ -18,7 +18,7 @@ export const LABEL = {
   bottom: labelBottom * 10,
 };
 
-function canvas(wMm, hMm) {
+export function canvas(wMm, hMm) {
   const c = document.createElement('canvas');
   c.width = Math.round(wMm * PX_PER_MM);
   c.height = Math.round(hMm * PX_PER_MM);
@@ -66,7 +66,7 @@ function labelCanvas(p) {
   return c;
 }
 
-function page(...children) {
+export function page(...children) {
   const s = document.createElement('section');
   s.className = 'page';
   s.append(...children);
@@ -74,7 +74,7 @@ function page(...children) {
   return s;
 }
 
-function header(title, note) {
+export function header(title, note) {
   const h = document.createElement('header');
   h.innerHTML = `<h1>${title}</h1><p>${note}</p><div class="ruler"><span></span>Control de escala: esta barra mide 50 mm</div>`;
   return h;
