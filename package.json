@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "print:3mf": "node print/modelos.mjs",
     "print:pdf": "node print/pdf.mjs",
-    "print": "npm run print:3mf && npm run print:pdf"
+    "print": "npm run print:3mf && npm run print:pdf",
+    "pendrive": "node pendrive.mjs"
   },
   "dependencies": {
     "gsap": "^3.15.0",

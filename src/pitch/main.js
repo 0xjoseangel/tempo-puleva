@@ -174,6 +174,8 @@ function animateCharts(scope) {
     gsap.fromTo(b, { attr: { y: b.dataset.y0, height: 0 } }, { attr: { y: b.getAttribute('y'), height: b.getAttribute('height') }, duration: 0.9, delay: 0.3 + i * 0.12, ease: 'power3.out' }));
   scope.querySelectorAll('.chart .val').forEach((b, i) =>
     gsap.fromTo(b, { opacity: 0 }, { opacity: 1, duration: 0.4, delay: 0.9 + i * 0.12 }));
+  scope.querySelectorAll('.media__bar').forEach((b, i) =>
+    gsap.fromTo(b, { scaleX: 0 }, { scaleX: 1, duration: 0.9, delay: 0.4 + i * 0.15, ease: 'power3.out' }));
   scope.querySelectorAll('.stores__col i').forEach((b, i) =>
     gsap.fromTo(b, { scaleY: 0 }, { scaleY: 1, duration: 1, delay: 0.4 + i * 0.18, ease: 'power3.out' }));
 }

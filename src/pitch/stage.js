@@ -9,6 +9,7 @@ const W = 1920;
 const H = 1080;
 const HIDDEN_Y = -40;
 const cronos = packs.find((p) => p.id === 'cronos');
+const X4 = 'fuerza'; // gama del Pack ×4 que se enseña
 
 /**
  * Escena 3D persistente detrás de las diapositivas: los cinco shots y la caja
@@ -26,7 +27,11 @@ export function createPitchStage(container) {
 
   const shots = Object.fromEntries(products.map((p) => [p.id, createShot(p, renderer)]));
   const order = products.map((p) => p.id);
-  order.forEach((id, i) => {
+  // Tres copias más de una gama para llenar la caja del Pack ×4
+  const x4 = [X4, ...[2, 3, 4].map((n) => `${X4}${n}`)];
+  x4.slice(1).forEach((k) => (shots[k] = createShot(productById[X4], renderer)));
+  const all = Object.keys(shots);
+  all.forEach((id, i) => {
     const s = shots[id];
     s.position.y = HIDDEN_Y;
     s.userData.ry = 0;
@@ -35,7 +40,12 @@ export function createPitchStage(container) {
   });
 
   const box = createPackBox();
-  box.print({ title: cronos.label, subtitle: cronos.subtitle, colors: cronos.items.map((id) => productById[id].color) });
+  const prints = {
+    cronos: { title: cronos.label, subtitle: cronos.subtitle, colors: cronos.items.map((id) => productById[id].color) },
+    x4: { title: `Pack ${productById[X4].range}`, subtitle: `${productById[X4].moment} · ${productById[X4].benefit}`, colors: [productById[X4].color] },
+  };
+  let printed = 'cronos';
+  box.print(prints.cronos);
   box.group.position.y = HIDDEN_Y;
   scene.add(box.group);
 
@@ -55,7 +65,7 @@ export function createPitchStage(container) {
   let sway = 1;
   stage.onTick((dt, t) => {
     placeCamera();
-    for (const id of order) {
+    for (const id of all) {
       const s = shots[id];
       s.visible = s.position.y > HIDDEN_Y + 8;
       s.rotation.y = s.userData.ry + Math.sin(t * 0.45 + s.userData.phase) * 0.22 * sway;
@@ -67,15 +77,18 @@ export function createPitchStage(container) {
 
   const layouts = {
     hidden: () => ({ shots: {}, cam: { tx: 0, ty: 7, dist: 50, el: 0.2, az: 0 } }),
-    lineup: () => ({ shots: lineup(5.4), cam: { tx: 0, ty: 8.6, dist: 64, el: 0.22, az: 0 } }),
+    lineup: () => ({ shots: lineup(5.4), cam: { tx: 0, ty: 11.2, dist: 64, el: 0.22, az: 0 } }),
     range: () => ({ shots: lineup(6.2), cam: { tx: 0, ty: 6.5, dist: 54, el: 0.2, az: 0 } }),
     end: () => ({ shots: lineup(5.4), cam: { tx: 10, ty: 14.3, dist: 90, el: 0.16, az: 0 } }),
     hero: (id) => ({ shots: { [id]: { x: 0, y: 0, z: 0, ry: -0.35 } }, cam: { tx: -6.5, ty: 6, dist: 30, el: 0.16, az: 0.12 } }),
-    pack: () => ({
-      shots: Object.fromEntries(cronos.items.map((id, i) => [id, { x: box.slotX[i], y: 0.18, z: 0, ry: 0, drop: true }])),
-      box: true,
-      cam: { tx: -9.5, ty: 5.5, dist: 44, el: 0.38, az: 0.14 },
-    }),
+    // pack: Cronos (uno de cada) · pack:x4: cuatro de la misma gama · pack:sueltos: sin caja
+    pack: (arg) => arg === 'sueltos'
+      ? { shots: lineup(4.4), cam: { tx: -11, ty: 6.5, dist: 60, el: 0.22, az: 0.1 } }
+      : {
+        shots: Object.fromEntries((arg === 'x4' ? x4 : cronos.items).map((id, i) => [id, { x: box.slotX[i], y: 0.18, z: 0, ry: 0, drop: true }])),
+        box: arg === 'x4' ? 'x4' : 'cronos',
+        cam: { tx: -9.5, ty: 5.5, dist: 44, el: 0.38, az: 0.14 },
+      },
   };
 
   let current = '';
@@ -88,13 +101,19 @@ export function createPitchStage(container) {
 
     gsap.to(cam, { ...L.cam, duration: d, ease: 'power3.inOut', overwrite: true });
 
-    order.forEach((id, i) => {
+    all.forEach((id, i) => {
       const s = shots[id];
       const to = L.shots[id];
       gsap.killTweensOf([s.position, s.userData, s.scale]);
+      const wasInBox = !s.userData.contact.visible;
       s.userData.contact.visible = !to?.drop;
       if (!to) {
         if (s.position.y <= HIDDEN_Y + 1) return;
+        // Si estaba en la caja sale por arriba, no atravesándola
+        if (wasInBox && L.box && d) {
+          gsap.to(s.position, { y: 26, duration: d * 0.45, delay: i * 0.04, ease: 'power2.in', onComplete: () => (s.position.y = HIDDEN_Y) });
+          return;
+        }
         gsap.to(s.position, { y: HIDDEN_Y, duration: d * 0.6, delay: i * 0.03 * (d && 1), ease: 'power2.in' });
         if (s.userData.activated) gsap.delayedCall(d * 0.6, () => resetPowder(s));
         return;
@@ -114,7 +133,19 @@ export function createPitchStage(container) {
 
     gsap.killTweensOf([box.group.position, box.group.scale]);
     if (L.box) {
-      if (box.group.position.y <= HIDDEN_Y + 1) box.group.scale.setScalar(0.6);
+      const away = box.group.position.y <= HIDDEN_Y + 1;
+      if (L.box !== printed) {
+        printed = L.box;
+        if (away || !d) box.print(prints[printed]);
+        else {
+          // Cambio de caja con un pequeño «pop» mientras los shots salen
+          gsap.timeline()
+            .to(box.group.scale, { x: 0.85, y: 0.85, z: 0.85, duration: d * 0.25, ease: 'power2.in', onComplete: () => box.print(prints[printed]) })
+            .to(box.group.scale, { x: 1, y: 1, z: 1, duration: d * 0.5, ease: 'back.out(2)' });
+          return;
+        }
+      }
+      if (away) box.group.scale.setScalar(0.6);
       gsap.to(box.group.position, { y: 0, duration: d * 0.8, ease: 'power3.out' });
       gsap.to(box.group.scale, { x: 1, y: 1, z: 1, duration: d, ease: 'back.out(1.4)' });
     } else if (box.group.position.y > HIDDEN_Y + 1) {
@@ -141,6 +172,6 @@ export function createPitchStage(container) {
       return activatePowder(s);
     },
     resetPowder: (id) => resetPowder(shots[id]),
-    debug: () => ({ cam: [cam.tx, cam.ty, cam.dist, cam.el, cam.az], pos: camera.position.toArray(), shots: order.map((id) => [id, shots[id].visible, shots[id].position.toArray().map((n) => +n.toFixed(1)), shots[id].scale.x]), box: [box.group.visible, box.group.position.y] }),
+    debug: () => ({ cam: [cam.tx, cam.ty, cam.dist, cam.el, cam.az], pos: camera.position.toArray(), shots: all.map((id) => [id, shots[id].visible, shots[id].position.toArray().map((n) => +n.toFixed(1)), shots[id].scale.x]), box: [box.group.visible, box.group.position.y] }),
   };
 }
