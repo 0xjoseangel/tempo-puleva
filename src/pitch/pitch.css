@@ -28,6 +28,7 @@ body.dark { --ink: var(--c-cream); --ink-soft: #B8C2D3; }
   box-shadow: 0 0 8vmin 2vmin rgb(255 248 234 / 0.25), inset -1.6vmin -1vmin 0 rgb(0 0 0 / 0.08);
   opacity: var(--moon-o, 0); translate: 0 calc((1 - var(--moon-o, 0)) * 6vh);
 }
+.is-backup .sky__moon { opacity: 0; }
 .sky__stars { position: absolute; inset: 0; opacity: var(--moon-o, 0); }
 .sky__stars i { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #fff; animation: twinkle 3s ease-in-out infinite alternate; }
 @keyframes twinkle { from { opacity: 0.2; } to { opacity: 0.9; } }
@@ -246,6 +247,9 @@ body.dark { --ink: var(--c-cream); --ink-soft: #B8C2D3; }
 .pl td { padding: 13px 20px; text-align: right; border-bottom: 1px solid rgb(184 194 211 / 0.25); font-variant-numeric: tabular-nums; }
 .pl td:first-child { text-align: left; color: var(--ink-soft); }
 .pl__strong td { font-weight: 700; color: var(--ink) !important; }
+.pl--tight { font-size: 26px; margin-top: 20px; }
+.pl--tight th { font-size: 26px; padding: 10px 20px; }
+.pl--tight td { padding: 9px 20px; }
 .neg { color: #FF9C7E; }
 .pos { color: #7FD8CC; }
 .qa { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 40px; }

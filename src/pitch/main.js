@@ -315,6 +315,7 @@ function go(i, { atEnd = false, instant = false } = {}) {
   });
   document.getElementById('page').textContent = backup ? 'Reserva' : `${String(i + 1).padStart(2, '0')} / ${mainCount}`;
   hud.classList.toggle('is-hidden', slide.classList.contains('slide--ad'));
+  document.body.classList.toggle('is-backup', backup); // la luna taparía la cabecera de las tablas
 
   if (slide.contains(video)) {
     video.currentTime = 0;
