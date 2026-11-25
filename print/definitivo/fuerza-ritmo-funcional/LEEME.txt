@@ -1,0 +1,35 @@
+Tempo Fuerza + Ritmo FUNCIONAL - al pulsar, el polvo cae dentro del bote
+(proyecto de la Kobra X, perfil 0,20 mm Standard; hueco 1 = Blanco, hueco 2 = Menta/turquesa)
+
+ARCHIVOS
+  tapon-funcional.3mf                   las 4 piezas del tapón (imprímelo primero, es rápido)
+  bote-hueco.3mf                        el bote hueco con el cuello abierto (Blanco)
+  bote-y-tapon-funcional-completo.3mf   todo junto en una sola impresión
+  como-funciona.png                     corte en reposo y pulsado
+
+Imprime tal cual: el aro y el pulsador ya están boca abajo a propósito. Sin soportes.
+
+PIEZAS
+  Aro (turquesa)        rosca + agujero de salida + embudo + ranura para el tubo
+  Tubo (blanco)         la cámara; pared de 0,9 mm (2 pasadas, lo mínimo que imprime la Kobra X)
+  Tapón con palito      tapón cónico que cierra el agujero; el palito llega hasta el pulsador
+  Pulsador (turquesa)   tiene un faldón que entra en el tubo y un agujerito para el palito
+
+MONTAJE
+  1. Mete el palito por DEBAJO del aro, a través del agujero, y tira hacia arriba
+     hasta que el tapón cónico quede encajado (aprieta un poco: se queda clavado).
+  2. Mete el tubo blanco en la ranura de arriba del aro.
+  3. Echa el talco dentro del tubo, hasta la mitad como mucho.
+  4. Pon el pulsador encima: el palito entra en su agujerito.
+  5. Enrosca el aro en el bote.
+  6. Pulsa (baja 4 mm): el tapón sale hacia abajo y el talco cae al bote. Agita.
+
+PARA REPETIR
+  Desenrosca el aro, quita el pulsador, empuja el tapón hacia arriba desde abajo
+  hasta que vuelva a encajar, rellena y vuelve a montar.
+
+SI ALGO NO VA
+  - El tapón no se queda puesto: tira más fuerte hacia arriba, es una cuña.
+  - El talco no cae: da un golpecito o agita; el talco se apelmaza.
+  - El pulsador roza: lija un poco el faldón por fuera.
+  - Antes de meter líquido, prueba el bote con agua en el fregadero: el PLA puede rezumar.
